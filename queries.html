@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Customer Queries · June 2026</title>
+<link rel="stylesheet" href="theme.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="data.js"></script><script src="utils.js"></script>
+</head>
+<body>
+<div id="hdr-mount"></div>
+<div class="page-hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-ey">Customer Insights · June 2026</div>
+    <div class="hero-ttl" style="color:#c084fc;">Customer <em>Queries</em></div>
+    <div class="hero-date">Presales vs Postsales</div>
+    <div class="hero-sub">Top query categories from all audited interactions this cycle (26 May – 25 Jun 2026)</div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val blue" data-cu="522">522</div><div class="hs-lbl">Presales Audits</div></div>
+      <div class="hs"><div class="hs-val gold" data-cu="669">669</div><div class="hs-lbl">Postsales Audits</div></div>
+      <div class="hs"><div class="hs-val white" data-cu="12">12</div><div class="hs-lbl">Presales Categories</div></div>
+      <div class="hs"><div class="hs-val white" data-cu="12">12</div><div class="hs-lbl">Postsales Categories</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+
+  <!-- COMBINED TABLE -->
+  <div class="sec">
+    <div class="sec-ey">Side-by-side Comparison</div>
+    <div class="sec-ttl">Top Customer Queries — Presales vs Postsales</div>
+    <div class="sec-sub">Most frequent query types from all audited interactions this cycle.</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:36px;">#</th>
+            <th style="text-align:left;color:#60a5fa;">📋 Presales Query</th>
+            <th style="color:#60a5fa;">Count</th>
+            <th style="color:#60a5fa;">Share</th>
+            <th style="text-align:left;color:#fcd34d;">📞 Postsales Query</th>
+            <th style="color:#fcd34d;">Count</th>
+            <th style="color:#fcd34d;">Share</th>
+          </tr>
+        </thead>
+        <tbody><tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#1</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">SKU related query</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">63</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">45%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Order Status</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">101</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">24%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#2</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Jewellery Selection</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">17</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">12%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Cancellation</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">68</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">16%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#3</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">General query</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">14</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">10%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Return Pick Up</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">64</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">15%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#4</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Wants to know Offers/Discounts</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">9</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">6%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Repair Charges</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">45</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">11%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#5</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Xclusive Points Query</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">9</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">6%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">15 Days MB</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">31</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">7%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#6</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">PoP - Redemption</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">9</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">6%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">POP</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">26</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">6%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#7</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Early Delivery</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">6</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">4%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Refund</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">24</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">6%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#8</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Shaya Query</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">3</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">2%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Repair Status</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">17</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">4%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#9</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">TAH Request</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">3</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">2%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Digi Gold</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">13</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">3%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#10</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">EMI Query</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">2</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">1%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Repair</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">12</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">3%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#11</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Life Time Exchange</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">2</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">1%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Refund Status</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">11</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">3%</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:var(--txt3);font-size:13px;">#12</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Credit Balance</td><td style="text-align:center;"><span style="background:#2563eb22;color:#2563eb;border:1px solid #2563eb44;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">2</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">1%</td><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">General Issues</td><td style="text-align:center;"><span style="background:#c8a84622;color:#b8860b;border:1px solid #c8a84644;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">8</span></td><td style="text-align:center;font-size:12px;color:var(--txt3);">2%</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SEPARATE DEEP DIVES -->
+  <div class="sec">
+    <div class="sec-ey">Deep Dive</div>
+    <div class="sec-ttl">Presales vs Postsales — Side by Side</div>
+    <div class="ig2">
+      <div>
+        <div style="background:#2563eb18;border:1.5px solid #2563eb33;border-radius:14px 14px 0 0;padding:14px 18px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2563eb;">📋 PRESALES TOP QUERIES</div>
+        <div class="tbl-wrap" style="border-radius:0 0 14px 14px;">
+          <table class="tbl"><thead><tr><th style="text-align:left;">Query Category</th><th>Count</th><th>Share</th></tr></thead>
+          <tbody><tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">SKU related query</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">63</td><td>45%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Jewellery Selection</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">17</td><td>12%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">General query</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">14</td><td>10%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Wants to know Offers/Discounts</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">9</td><td>6%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Xclusive Points Query</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">9</td><td>6%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">PoP - Redemption</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">9</td><td>6%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Early Delivery</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">6</td><td>4%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Shaya Query</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">3</td><td>2%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">TAH Request</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">3</td><td>2%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">EMI Query</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">2</td><td>1%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Life Time Exchange</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">2</td><td>1%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Credit Balance</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">2</td><td>1%</td></tr></tbody></table>
+        </div>
+      </div>
+      <div>
+        <div style="background:#c8a84618;border:1.5px solid #c8a84633;border-radius:14px 14px 0 0;padding:14px 18px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8860b;">📞 POSTSALES TOP QUERIES</div>
+        <div class="tbl-wrap" style="border-radius:0 0 14px 14px;">
+          <table class="tbl"><thead><tr><th style="text-align:left;">Query Category</th><th>Count</th><th>Share</th></tr></thead>
+          <tbody><tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Order Status</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">101</td><td>24%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Cancellation</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">68</td><td>16%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Return Pick Up</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">64</td><td>15%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Repair Charges</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">45</td><td>11%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">15 Days MB</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">31</td><td>7%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">POP</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">26</td><td>6%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Refund</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">24</td><td>6%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Repair Status</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">17</td><td>4%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Digi Gold</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">13</td><td>3%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Repair</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">12</td><td>3%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">Refund Status</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">11</td><td>3%</td></tr>
+<tr><td style="text-align:left;padding:10px 14px;font-size:13px;font-weight:600;color:var(--txt);">General Issues</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">8</td><td>2%</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="sec">
+    <div class="sec-ey">Charts</div>
+    <div class="sec-ttl">Query Distribution</div>
+    <div class="chart-grid">
+      <div class="chart-card"><div class="cc-ttl">Top Presales Queries</div><div class="cc-sub">By frequency of occurrence in audits</div><div class="ch"><canvas id="psQChart"></canvas></div></div>
+      <div class="chart-card"><div class="cc-ttl">Top Postsales Queries</div><div class="cc-sub">By frequency of occurrence in audits</div><div class="ch"><canvas id="posQChart"></canvas></div></div>
+    </div>
+  </div>
+
+</div>
+<div id="ftr-mount"></div>
+<script>
+Chart.register(ChartDataLabels);
+document.getElementById('hdr-mount').innerHTML = renderHeader('queries.html');
+document.getElementById('ftr-mount').innerHTML = renderFooter();
+const isDark=()=>document.documentElement.getAttribute('data-theme')==='dark';
+const tc=()=>isDark()?'#b8b0cc':'#4a3f2f';
+const gc=()=>isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.06)';
+const psQ=[["SKU related query", 63], ["Jewellery Selection", 17], ["General query", 14], ["Wants to know Offers/Discounts", 9], ["Xclusive Points Query", 9], ["PoP - Redemption", 9], ["Early Delivery", 6], ["Shaya Query", 3], ["TAH Request", 3], ["EMI Query", 2]];
+const posQ=[["Order Status", 101], ["Cancellation", 68], ["Return Pick Up", 64], ["Repair Charges", 45], ["15 Days MB", 31], ["POP", 26], ["Refund", 24], ["Repair Status", 17], ["Digi Gold", 13], ["Repair", 12]];
+new Chart(document.getElementById('psQChart'),{type:'bar',data:{labels:psQ.map(q=>q[0]),datasets:[{label:'Count',data:psQ.map(q=>q[1]),backgroundColor:'#2563ebCC',borderColor:'#2563eb',borderWidth:1.5,borderRadius:4,datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v}}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},scales:{x:{ticks:{color:tc},grid:{color:gc}},y:{ticks:{color:tc,font:{size:9}},grid:{display:false}}}},plugins:[ChartDataLabels]});
+new Chart(document.getElementById('posQChart'),{type:'bar',data:{labels:posQ.map(q=>q[0]),datasets:[{label:'Count',data:posQ.map(q=>q[1]),backgroundColor:'#c8a846CC',borderColor:'#c8a846',borderWidth:1.5,borderRadius:4,datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v}}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},scales:{x:{ticks:{color:tc},grid:{color:gc}},y:{ticks:{color:tc,font:{size:9}},grid:{display:false}}}},plugins:[ChartDataLabels]});
+</script>
+</body></html>

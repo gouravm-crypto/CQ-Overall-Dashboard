@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Postsales Dashboard · June 2026</title>
+<link rel="stylesheet" href="theme.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="data.js"></script><script src="utils.js"></script>
+</head>
+<body>
+<div id="hdr-mount"></div>
+<div class="page-hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-ey">Quality Assurance · Postsales Team</div>
+    <div class="hero-ttl" style="color:#e8c86a;">Postsales <em>Dashboard</em></div>
+    <div class="hero-date">June 2026</div>
+    <div class="hero-sub">38 agents · 669 audits · Inbound, Outbound, WhatsApp, Emails, Experience</div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val white" data-cu="669">669</div><div class="hs-lbl">Audits</div></div>
+      <div class="hs"><div class="hs-val gold" data-cu="81" data-suf="%">81%</div><div class="hs-lbl">Team CQ</div></div>
+      <div class="hs"><div class="hs-val red" data-cu="38">38</div><div class="hs-lbl">NCF</div></div>
+      <div class="hs"><div class="hs-val white" data-cu="38">38</div><div class="hs-lbl">Agents</div></div>
+      <div class="hs"><div class="hs-val green" data-cu="19">19</div><div class="hs-lbl">Zero NCF</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+
+  <!-- KEY INSIGHTS -->
+  <div class="sec">
+    <div class="sec-ey">Key Insights</div><div class="sec-ttl">Postsales Highlights</div>
+    <div class="ig4">
+      <div class="ic gold"><div class="ic-lbl">⭐ Star of Month</div><div class="ic-val gold">98%</div><div class="ic-sub"><strong>Dinesh_Sr</strong><br>Postsale - Outbound · 20 audits</div></div>
+      <div class="ic green"><div class="ic-lbl">✅ Zero NCF</div><div class="ic-val green">19</div><div class="ic-sub">19 of 38 agents maintained zero NCF</div></div>
+      <div class="ic red"><div class="ic-lbl">⚠️ Needs Focus</div><div class="ic-val red">29%</div><div class="ic-sub"><strong>Kruti_P</strong><br>Experience · 5 NCF</div></div>
+      <div class="ic orange"><div class="ic-lbl">🔴 Top Error</div><div class="ic-val orange">164</div><div class="ic-sub"><strong>Failed to portray Empathy when necessary</strong> — Largest single error across all postsales audits</div></div>
+    </div>
+  </div>
+
+  <!-- TOP PERFORMERS BY AUDIT COUNT -->
+  <div class="sec">
+    <div class="sec-ey">Top Performers</div>
+    <div class="sec-ttl">Highest Audit Count with CQ Maintained</div>
+    <div class="sec-sub">Ranked by highest number of audits · CQ score maintained · June 2026</div>
+    <div class="tbl-wrap">
+      <div style="background:#c8a84618;border:1.5px solid #c8a84644;border-radius:14px 14px 0 0;padding:14px 18px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#b8860b;margin-bottom:4px;">📞 POSTSALES — TOP PERFORMERS</div>
+        <div style="font-size:12px;color:var(--txt3);">Ranked by highest audit count · CQ score maintained · June 2026</div>
+      </div>
+      <table class="tbl" style="border-radius:0 0 14px 14px;">
+        <thead><tr><th style="width:36px;">#</th><th style="text-align:left;">Agent</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead>
+        <tbody><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">1</td>
+      <td><div class="agent-cell"><div class="av" style="background:#c8a846;">MN</div><div><div class="anm">Mazia_N</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-ok">0</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="81"></div></div><span class="pct cgg">81%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">2</td>
+      <td><div class="agent-cell"><div class="av" style="background:#16a34a;">VN</div><div><div class="anm">Vyas_N</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-bad">1</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="80"></div></div><span class="pct cgg">80%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">3</td>
+      <td><div class="agent-cell"><div class="av" style="background:#2563eb;">RA</div><div><div class="anm">Raihan_A</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-bad">2</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="74"></div></div><span class="pct co">74%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">4</td>
+      <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">CS</div><div><div class="anm">Chanchal_S</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-bad">2</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="74"></div></div><span class="pct co">74%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">5</td>
+      <td><div class="agent-cell"><div class="av" style="background:#ea580c;">YK</div><div><div class="anm">Yasmeen_K</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-bad">1</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="73"></div></div><span class="pct co">73%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">6</td>
+      <td><div class="agent-cell"><div class="av" style="background:#dc2626;">OD</div><div><div class="anm">Oindrilla_D</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-bad">4</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="70"></div></div><span class="pct co">70%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">7</td>
+      <td><div class="agent-cell"><div class="av" style="background:#0891b2;">MC</div><div><div class="anm">Manika_C</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">30</td><td><span class="ncf-bad">3</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="69"></div></div><span class="pct co">69%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">8</td>
+      <td><div class="agent-cell"><div class="av" style="background:#be185d;">DS</div><div><div class="anm">Dinesh_Sr</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">20</td><td><span class="ncf-ok">0</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="98"></div></div><span class="pct cg">98%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">9</td>
+      <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">RS</div><div><div class="anm">Rayeesa_S</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">20</td><td><span class="ncf-ok">0</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="96"></div></div><span class="pct cg">96%</span></div></td>
+    </tr><tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">10</td>
+      <td><div class="agent-cell"><div class="av" style="background:#0e7490;">KJ</div><div><div class="anm">Khushi_J</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">20</td><td><span class="ncf-ok">0</span></td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="96"></div></div><span class="pct cg">96%</span></div></td>
+    </tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SUB-TEAM -->
+  <div class="sec">
+    <div class="sec-ey">Sub-team Breakdown</div><div class="sec-ttl">Performance by Channel</div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr>
+  <th style="text-align:left;">Sub-team</th>
+  <th>Agents</th><th>Audits</th><th>NCF</th><th>CQ Score</th>
+</tr></thead><tbody><tr>
+          <td style="text-align:left;padding-left:16px;font-weight:600;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c8a846;margin-right:8px;"></span>Postsale - Outbound
+          </td>
+          <td style="text-align:center;font-weight:600;">7</td>
+          <td style="text-align:center;">140</td>
+          <td><span class="ncf-bad">3</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr><tr>
+          <td style="text-align:left;padding-left:16px;font-weight:600;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0891b2;margin-right:8px;"></span>Postsale - WhatsApp
+          </td>
+          <td style="text-align:center;font-weight:600;">9</td>
+          <td style="text-align:center;">210</td>
+          <td><span class="ncf-bad">6</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="83"></div></div><span class="pct cgg">83%</span></div></td>
+        </tr><tr>
+          <td style="text-align:left;padding-left:16px;font-weight:600;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#7c3aed;margin-right:8px;"></span>Emails
+          </td>
+          <td style="text-align:center;font-weight:600;">7</td>
+          <td style="text-align:center;">49</td>
+          <td><span class="ncf-bad">5</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="82"></div></div><span class="pct cgg">82%</span></div></td>
+        </tr><tr>
+          <td style="text-align:left;padding-left:16px;font-weight:600;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#be185d;margin-right:8px;"></span>Postsale - Inbound
+          </td>
+          <td style="text-align:center;font-weight:600;">11</td>
+          <td style="text-align:center;">246</td>
+          <td><span class="ncf-bad">14</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="78"></div></div><span class="pct co">78%</span></div></td>
+        </tr><tr>
+          <td style="text-align:left;padding-left:16px;font-weight:600;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6d28d9;margin-right:8px;"></span>Experience
+          </td>
+          <td style="text-align:center;font-weight:600;">4</td>
+          <td style="text-align:center;">24</td>
+          <td><span class="ncf-bad">10</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="53"></div></div><span class="pct co">53%</span></div></td>
+        </tr></tbody></table></div>
+  </div>
+
+  <!-- AGENT TABLE -->
+  <div class="sec">
+    <div class="sec-ey">Agent Performance</div><div class="sec-ttl">Individual CQ Scores</div>
+    <div class="sec-sub">All 38 Postsales agents sorted highest to lowest. Use filter to view by sub-team.</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;" id="stFilter"></div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th style="text-align:left;">Agent</th><th>Audits</th><th>NCF</th><th>CQ</th></tr></thead><tbody id="agentBody"><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">1</td>
+          <td><div class="agent-cell"><div class="av" style="background:#c8a846;">DS</div><div><div class="anm">Dinesh_Sr</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="98"></div></div><span class="pct cg">98%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">2</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">SB</div><div><div class="anm">Safura_B</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="96"></div></div><span class="pct cg">96%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">3</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">RS</div><div><div class="anm">Rayeesa_S</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="96"></div></div><span class="pct cg">96%</span></div></td>
+        </tr><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">4</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">KJ</div><div><div class="anm">Khushi_J</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="96"></div></div><span class="pct cg">96%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">5</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">PV</div><div><div class="anm">Preethi_V</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bg" data-w="95"></div></div><span class="pct cg">95%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">6</td>
+          <td><div class="agent-cell"><div class="av" style="background:#dc2626;">SD</div><div><div class="anm">Shruthiparmar_D</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="94"></div></div><span class="pct cgg">94%</span></div></td>
+        </tr><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">7</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">SJ</div><div><div class="anm">Sanjana_J</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="94"></div></div><span class="pct cgg">94%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">8</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">KM</div><div><div class="anm">Kareemullah_M</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="94"></div></div><span class="pct cgg">94%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">9</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">BJ</div><div><div class="anm">Bhavana_J</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">10</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0e7490;">AM</div><div><div class="anm">Akbar_M</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="91"></div></div><span class="pct cgg">91%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">11</td>
+          <td><div class="agent-cell"><div class="av" style="background:#c8a846;">KG</div><div><div class="anm">Karun_G</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">12</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">AS</div><div><div class="anm">Ansari_S</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="90"></div></div><span class="pct cgg">90%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">13</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">TB</div><div><div class="anm">Theja_B</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="88"></div></div><span class="pct cgg">88%</span></div></td>
+        </tr><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">14</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">SI</div><div><div class="anm">Sadiqbasha_I</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="88"></div></div><span class="pct cgg">88%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">15</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">SA</div><div><div class="anm">Surbhi_A</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="87"></div></div><span class="pct cgg">87%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">16</td>
+          <td><div class="agent-cell"><div class="av" style="background:#dc2626;">MN</div><div><div class="anm">Muzakir_N</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="86"></div></div><span class="pct cgg">86%</span></div></td>
+        </tr><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">17</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">AH</div><div><div class="anm">Adeeb_H</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="85"></div></div><span class="pct cgg">85%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">18</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">NR</div><div><div class="anm">Nitheesh_R</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="84"></div></div><span class="pct cgg">84%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">19</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">AT</div><div><div class="anm">Ayesha_T</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>13</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="83"></div></div><span class="pct cgg">83%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">20</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0e7490;">MD</div><div><div class="anm">Madhu_D</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>20</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="82"></div></div><span class="pct cgg">82%</span></div></td>
+        </tr><tr data-st="Postsale - Outbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">21</td>
+          <td><div class="agent-cell"><div class="av" style="background:#c8a846;">AA</div><div><div class="anm">Aqsa_A</div><div class="ahint">Postsale - Outbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="82"></div></div><span class="pct cgg">82%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">22</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">MN</div><div><div class="anm">Mazia_N</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>30</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="81"></div></div><span class="pct cgg">81%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">23</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">VN</div><div><div class="anm">Vyas_N</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>30</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bgg" data-w="80"></div></div><span class="pct cgg">80%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">24</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">AP</div><div><div class="anm">Asrarahmed_P</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>20</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="77"></div></div><span class="pct co">77%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">25</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">AR</div><div><div class="anm">Ankita_R</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>19</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="77"></div></div><span class="pct co">77%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">26</td>
+          <td><div class="agent-cell"><div class="av" style="background:#dc2626;">RA</div><div><div class="anm">Raihan_A</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>30</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="74"></div></div><span class="pct co">74%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">27</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">JF</div><div><div class="anm">John_F</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>20</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="74"></div></div><span class="pct co">74%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">28</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">CS</div><div><div class="anm">Chanchal_S</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>30</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="74"></div></div><span class="pct co">74%</span></div></td>
+        </tr><tr data-st="Postsale - WhatsApp">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">29</td>
+          <td><div class="agent-cell"><div class="av" style="background:#6d28d9;">YK</div><div><div class="anm">Yasmeen_K</div><div class="ahint">Postsale - WhatsApp</div></div></div></td>
+          <td>30</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="73"></div></div><span class="pct co">73%</span></div></td>
+        </tr><tr data-st="Experience">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">30</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0e7490;">MR</div><div><div class="anm">Mallika_R</div><div class="ahint">Experience</div></div></div></td>
+          <td>5</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="73"></div></div><span class="pct co">73%</span></div></td>
+        </tr><tr data-st="Experience">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">31</td>
+          <td><div class="agent-cell"><div class="av" style="background:#c8a846;">AA</div><div><div class="anm">Ajmal_A</div><div class="ahint">Experience</div></div></div></td>
+          <td>5</td><td><span class="ncf-bad">1</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="73"></div></div><span class="pct co">73%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">32</td>
+          <td><div class="agent-cell"><div class="av" style="background:#16a34a;">UF</div><div><div class="anm">Umra_F</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>14</td><td><span class="ncf-ok">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="72"></div></div><span class="pct co">72%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">33</td>
+          <td><div class="agent-cell"><div class="av" style="background:#2563eb;">OD</div><div><div class="anm">Oindrilla_D</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>30</td><td><span class="ncf-bad">4</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="70"></div></div><span class="pct co">70%</span></div></td>
+        </tr><tr data-st="Postsale - Inbound">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">34</td>
+          <td><div class="agent-cell"><div class="av" style="background:#7c3aed;">MC</div><div><div class="anm">Manika_C</div><div class="ahint">Postsale - Inbound</div></div></div></td>
+          <td>30</td><td><span class="ncf-bad">3</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="69"></div></div><span class="pct co">69%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">35</td>
+          <td><div class="agent-cell"><div class="av" style="background:#ea580c;">GM</div><div><div class="anm">Ghouse_M</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-bad">2</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="62"></div></div><span class="pct co">62%</span></div></td>
+        </tr><tr data-st="Emails">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">36</td>
+          <td><div class="agent-cell"><div class="av" style="background:#dc2626;">JK</div><div><div class="anm">Jinal_K</div><div class="ahint">Emails</div></div></div></td>
+          <td>7</td><td><span class="ncf-bad">3</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="55"></div></div><span class="pct co">55%</span></div></td>
+        </tr><tr data-st="Experience">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">37</td>
+          <td><div class="agent-cell"><div class="av" style="background:#0891b2;">TJ</div><div><div class="anm">Tisha_J</div><div class="ahint">Experience</div></div></div></td>
+          <td>7</td><td><span class="ncf-bad">3</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="48"></div></div><span class="pct co">48%</span></div></td>
+        </tr><tr data-st="Experience">
+          <td style="text-align:center;font-weight:700;color:var(--txt3);">38</td>
+          <td><div class="agent-cell"><div class="av" style="background:#be185d;">KP</div><div><div class="anm">Kruti_P</div><div class="ahint">Experience</div></div></div></td>
+          <td>7</td><td><span class="ncf-bad">5</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bo" data-w="29"></div></div><span class="pct co">29%</span></div></td>
+        </tr></tbody></table></div>
+  </div>
+
+  <!-- SUB-ERRORS -->
+  <div class="sec">
+    <div class="sec-ey">Error Analysis</div><div class="sec-ttl">Top Sub-errors This Cycle</div>
+    <div class="sec-sub">Specific error types found most frequently across all 669 postsales audits.</div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th style="text-align:left;">Error Type</th><th>Count</th><th>% of Audits</th><th>Severity</th></tr></thead><tbody><tr><td style="text-align:left;padding-left:16px;font-size:12px;">Failed to portray Empathy when necessary</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#2563eb;">164</td><td>25%</td><td><span style="color:#dc2626;font-weight:700;">High</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Failed to take ownership on resolution</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#be185d;">90</td><td>13%</td><td><span style="color:#dc2626;font-weight:700;">High</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Lack of probing</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#16a34a;">49</td><td>7%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Failed to use positive phrases / ownership statement</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#16a34a;">40</td><td>6%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Failed to retain customer from Cancellation or Money Back</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#6d28d9;">33</td><td>5%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Tone and manner was not inviting for queries</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#16a34a;">33</td><td>5%</td><td><span style="color:#ea580c;font-weight:700;">Medium</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Incomplete information given</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#be185d;">26</td><td>4%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Grammatical mistakes</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#7c3aed;">26</td><td>4%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Follow up not done</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#16a34a;">25</td><td>4%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Incorrect information given</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#c8a846;">19</td><td>3%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Interrupted the customer</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#be185d;">19</td><td>3%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr>
+<tr><td style="text-align:left;padding-left:16px;font-size:12px;">Probing related to resolution not done</td><td style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#0891b2;">18</td><td>3%</td><td><span style="color:#16a34a;font-weight:700;">Low</span></td></tr></tbody></table></div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="sec">
+    <div class="sec-ey">Charts</div><div class="sec-ttl">Visual Breakdown</div>
+    <div class="chart-grid">
+      <div class="chart-card"><div class="cc-ttl">CQ by Sub-team</div><div class="cc-sub">Average CQ% per postsales sub-team</div><div class="ch"><canvas id="stChart"></canvas></div></div>
+      <div class="chart-card"><div class="cc-ttl">Top Sub-errors</div><div class="cc-sub">Most frequent specific error types</div><div class="ch"><canvas id="errChart"></canvas></div></div>
+      <div class="chart-card full"><div class="cc-ttl">All Agents — CQ Scores</div><div class="cc-sub">Sorted highest to lowest · coloured by sub-team</div><div class="ch" style="height:280px;"><canvas id="agentChart"></canvas></div></div>
+    </div>
+  </div>
+</div>
+<div id="ftr-mount"></div>
+<script>
+Chart.register(ChartDataLabels);
+document.getElementById('hdr-mount').innerHTML = renderHeader('postsales.html');
+document.getElementById('ftr-mount').innerHTML = renderFooter();
+const agents = POSTSALES_AGENTS;
+const stNames = [...new Set(agents.map(a=>a.subteam))];
+const fDiv = document.getElementById('stFilter');
+[['all','All'],...stNames.map(s=>[s,s])].forEach(([val,lbl])=>{
+  const sp=document.createElement('span');
+  sp.className='pill';sp.textContent=lbl;
+  sp.style.cssText='cursor:pointer;padding:5px 14px;border:1.5px solid var(--bdr);color:var(--txt3);font-weight:700;margin:2px;border-radius:16px;font-size:10px;letter-spacing:.5px;text-transform:uppercase;';
+  sp.onclick=()=>{
+    fDiv.querySelectorAll('span').forEach(p=>{p.style.borderColor='var(--bdr)';p.style.color='var(--txt3)';p.style.background='transparent';});
+    sp.style.borderColor='var(--gold)';sp.style.color='var(--gold)';sp.style.background='var(--gold-pale)';
+    document.querySelectorAll('#agentBody tr').forEach(r=>{r.style.display=(val==='all'||r.getAttribute('data-st')===val)?'':'none';});
+  };
+  if(val==='all'){sp.style.borderColor='var(--gold)';sp.style.color='var(--gold)';sp.style.background='var(--gold-pale)';}
+  fDiv.appendChild(sp);
+});
+const isDark=()=>document.documentElement.getAttribute('data-theme')==='dark';
+const tc=()=>isDark()?'#b8b0cc':'#4a3f2f';
+const gc=()=>isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.06)';
+const stSorted=[["Postsale - Outbound", {"cq": 91, "audits": 140, "ncf": 3, "agents": 7}], ["Postsale - WhatsApp", {"cq": 83, "audits": 210, "ncf": 6, "agents": 9}], ["Emails", {"cq": 82, "audits": 49, "ncf": 5, "agents": 7}], ["Postsale - Inbound", {"cq": 78, "audits": 246, "ncf": 14, "agents": 11}], ["Experience", {"cq": 53, "audits": 24, "ncf": 10, "agents": 4}]];
+new Chart(document.getElementById('stChart'),{type:'bar',data:{labels:stSorted.map(s=>s[0]),datasets:[{label:'CQ%',data:stSorted.map(s=>s[1].cq),backgroundColor:stSorted.map(s=>getAVColor(s[0])+'CC'),borderColor:stSorted.map(s=>getAVColor(s[0])),borderWidth:1.5,borderRadius:4,datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v+'%'}}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},scales:{x:{ticks:{color:tc,font:{size:9}},grid:{display:false}},y:{min:40,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},plugins:[ChartDataLabels]});
+const errData=[["Failed to portray Empathy when necessary", 164], ["Failed to take ownership on resolution", 90], ["Lack of probing", 49], ["Failed to use positive phrases / ownership statement", 40], ["Failed to retain customer from Cancellation or Money Back", 33], ["Tone and manner was not inviting for queries", 33], ["Incomplete information given", 26], ["Grammatical mistakes", 26]];
+new Chart(document.getElementById('errChart'),{type:'bar',data:{labels:errData.map(e=>e[0].length>28?e[0].slice(0,28)+'…':e[0]),datasets:[{label:'Count',data:errData.map(e=>e[1]),backgroundColor:'#dc262688',borderColor:'#dc2626',borderWidth:1.5,borderRadius:4,datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v}}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},scales:{x:{ticks:{color:tc},grid:{color:gc}},y:{ticks:{color:tc,font:{size:9}},grid:{display:false}}}},plugins:[ChartDataLabels]});
+new Chart(document.getElementById('agentChart'),{type:'bar',data:{labels:agents.map(a=>a.name.replace('_',' ')),datasets:[{label:'CQ%',data:agents.map(a=>a.cq),backgroundColor:agents.map(a=>getAVColor(a.subteam)+'CC'),borderColor:agents.map(a=>getAVColor(a.subteam)),borderWidth:1,borderRadius:3,datalabels:{display:false}}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{display:false}},scales:{x:{ticks:{color:tc,font:{size:8},maxRotation:45},grid:{display:false}},y:{min:40,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},plugins:[ChartDataLabels]});
+</script>
+</body></html>

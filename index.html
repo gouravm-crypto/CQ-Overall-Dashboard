@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CQ Dashboard · Online Team · June 2026</title>
+<link rel="stylesheet" href="theme.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="data.js"></script><script src="utils.js"></script>
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<div class="page-hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-ey">Quality Assurance · Online Team</div>
+    <div class="hero-ttl">CQ <em>Dashboard</em></div>
+    <div class="hero-date">June 2026</div>
+    <div class="hero-sub" id="hero-sub">Loading...</div>
+    <div class="hero-stats" id="hero-stats"></div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- TEAM COMPARISON -->
+  <div class="sec">
+    <div class="sec-ey">Team Overview</div>
+    <div class="sec-ttl">Presales vs Postsales</div>
+    <div class="sec-sub">Side-by-side performance comparison for June 2026 (audit cycle: 26 May – 25 Jun 2026).</div>
+    <div class="ig2" id="teamCompare"></div>
+  </div>
+
+  <!-- TOP PERFORMERS BY AUDIT COUNT -->
+  <div class="sec">
+    <div class="sec-ey">Top Performers</div>
+    <div class="sec-ttl">Highest Audit Count with CQ Maintained</div>
+    <div class="sec-sub">Agents ranked by highest number of audits completed with CQ score sustained — separated by team.</div>
+    <div id="topPerformersMount"></div>
+  </div>
+
+  <!-- SUB-TEAM SNAPSHOT -->
+  <div class="sec">
+    <div class="sec-ey">Sub-team Snapshot</div>
+    <div class="sec-ttl">CQ by Sub-team</div>
+    <div class="sec-sub">Average CQ across all sub-teams — sorted highest to lowest.</div>
+    <div class="tbl-wrap">
+      <table class="tbl" id="subteamTable">
+        <thead><tr><th style="text-align:left;">Sub-team</th><th>Team</th><th>Agents</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead>
+        <tbody id="subteamBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="sec">
+    <div class="sec-ey">Visual Analysis</div>
+    <div class="sec-ttl">Charts</div>
+    <div class="chart-grid">
+      <div class="chart-card"><div class="cc-ttl">CQ by Sub-team</div><div class="cc-sub">Average CQ% across each sub-team</div><div class="ch"><canvas id="subteamChart"></canvas></div></div>
+      <div class="chart-card"><div class="cc-ttl">Presales vs Postsales NCF</div><div class="cc-sub">NCF count comparison between teams</div><div class="ch"><canvas id="ncfChart"></canvas></div></div>
+      <div class="chart-card full"><div class="cc-ttl">All Agents — CQ Scores</div><div class="cc-sub">Blue = Presales · Gold = Postsales · Sorted highest to lowest</div><div class="ch" style="height:300px;"><canvas id="allAgentsChart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="sec">
+    <div class="sec-ey">Navigate</div>
+    <div class="sec-ttl">Deep Dive Reports</div>
+    <div class="ig4" id="quickLinks"></div>
+  </div>
+
+</div>
+<div id="ftr-mount"></div>
+
+<script>
+Chart.register(ChartDataLabels);
+
+document.getElementById('hdr-mount').innerHTML = renderHeader('index.html');
+document.getElementById('ftr-mount').innerHTML = renderFooter();
+
+const allAgents = [...PRESALES_AGENTS, ...POSTSALES_AGENTS].sort((a,b)=>b.cq-a.cq);
+const totalAudits = PS_TOTALS.audits + POS_TOTALS.audits;
+const totalNCF    = PS_TOTALS.ncf + POS_TOTALS.ncf;
+const overallCQ   = Math.round((PS_TOTALS.cq * PS_TOTALS.audits + POS_TOTALS.cq * POS_TOTALS.audits) / totalAudits);
+
+document.getElementById('hero-sub').textContent = `${totalAudits} audits · ${allAgents.length} active agents · Presales & Postsales`;
+document.getElementById('hero-stats').innerHTML = `
+  <div class="hs"><div class="hs-val white" data-cu="${totalAudits}">${totalAudits}</div><div class="hs-lbl">Total Audits</div></div>
+  <div class="hs"><div class="hs-val gold" data-cu="${overallCQ}" data-suf="%">${overallCQ}%</div><div class="hs-lbl">Overall CQ</div></div>
+  <div class="hs"><div class="hs-val blue" data-cu="${PS_TOTALS.cq}" data-suf="%">${PS_TOTALS.cq}%</div><div class="hs-lbl">Presales CQ</div></div>
+  <div class="hs"><div class="hs-val purple" data-cu="${POS_TOTALS.cq}" data-suf="%">${POS_TOTALS.cq}%</div><div class="hs-lbl">Postsales CQ</div></div>
+  <div class="hs"><div class="hs-val red" data-cu="${totalNCF}">${totalNCF}</div><div class="hs-lbl">Total NCF</div></div>
+  <div class="hs"><div class="hs-val white" data-cu="${allAgents.length}">${allAgents.length}</div><div class="hs-lbl">Active Agents</div></div>`;
+
+// Team compare cards
+document.getElementById('teamCompare').innerHTML = `
+  <div class="ic blue" style="text-align:center;">
+    <div class="ic-lbl">📋 Presales Team</div>
+    <div class="ic-val blue">${PS_TOTALS.cq}%</div>
+    <div class="ic-sub"><strong>${PS_TOTALS.audits}</strong> audits · <strong>${PS_TOTALS.agents}</strong> agents · <strong>${PS_TOTALS.ncf}</strong> NCF<br><br>
+    ${PS_TOTALS.zero_ncf} agents with Zero NCF · Sub-teams: Inbound, Outbound, WhatsApp, Chat, Clive
+    <br><br><a href="presales.html" style="color:var(--blue);font-weight:700;font-size:12px;">View Full Presales Report →</a></div>
+  </div>
+  <div class="ic gold" style="text-align:center;">
+    <div class="ic-lbl">📞 Postsales Team</div>
+    <div class="ic-val gold">${POS_TOTALS.cq}%</div>
+    <div class="ic-sub"><strong>${POS_TOTALS.audits}</strong> audits · <strong>${POS_TOTALS.agents}</strong> agents · <strong>${POS_TOTALS.ncf}</strong> NCF<br><br>
+    ${POS_TOTALS.zero_ncf} agents with Zero NCF · Sub-teams: Inbound, Outbound, WhatsApp, Emails, Experience
+    <br><br><a href="postsales.html" style="color:var(--gold);font-weight:700;font-size:12px;">View Full Postsales Report →</a></div>
+  </div>`;
+
+// Top performers by audit count
+const psTop  = [...PRESALES_AGENTS].sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
+const posTop = [...POSTSALES_AGENTS].sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
+const AVC = ['#c8a846','#16a34a','#2563eb','#7c3aed','#ea580c','#dc2626','#0891b2','#be185d','#6d28d9','#0e7490'];
+function topTableHTML(agents, team, color) {
+  const icon = team==='Presales'?'📋':'📞';
+  const rows = agents.map((a,i)=>{
+    const bar=a.cq>=95?'bg':a.cq>=80?'bgg':'bo', pct=a.cq>=95?'cg':a.cq>=80?'cgg':'co';
+    const av=AVC[i%AVC.length], ini=a.name.split('_').filter(Boolean).map(p=>p[0].toUpperCase()).join('').slice(0,2);
+    const ncf=a.ncf>0?`<span class="ncf-bad">${a.ncf}</span>`:'<span class="ncf-ok">0</span>';
+    return `<tr>
+      <td style="text-align:center;font-weight:700;color:var(--txt3);font-size:12px;padding:10px 8px;">${i+1}</td>
+      <td><div class="agent-cell"><div class="av" style="background:${av};">${ini}</div><div><div class="anm">${a.name}</div><div class="ahint">${a.subteam}</div></div></div></td>
+      <td style="text-align:center;font-weight:600;">${a.audits}</td><td>${ncf}</td>
+      <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill ${bar}" data-w="${a.cq}"></div></div><span class="pct ${pct}">${a.cq}%</span></div></td>
+    </tr>`;
+  }).join('');
+  return `<div class="tbl-wrap" style="margin-bottom:24px;">
+    <div style="background:${color}18;border:1.5px solid ${color}44;border-radius:14px 14px 0 0;padding:14px 18px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${color};margin-bottom:4px;">${icon} ${team.toUpperCase()} — TOP PERFORMERS</div>
+      <div style="font-size:12px;color:var(--txt3);">Ranked by highest audit count · CQ score maintained · June 2026</div>
+    </div>
+    <table class="tbl" style="border-radius:0 0 14px 14px;">
+      <thead><tr><th style="width:36px;">#</th><th style="text-align:left;">Agent</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+document.getElementById('topPerformersMount').innerHTML = topTableHTML(psTop,'Presales','#2563eb') + topTableHTML(posTop,'Postsales','#c8a846');
+
+// Sub-team table
+const allSubteams = [
+  ...Object.entries(PS_SUBTEAMS).map(([k,v])=>({...v,name:k,team:'Presales'})),
+  ...Object.entries(POS_SUBTEAMS).map(([k,v])=>({...v,name:k,team:'Postsales'}))
+].sort((a,b)=>b.cq-a.cq);
+
+document.getElementById('subteamBody').innerHTML = allSubteams.map(s=>{
+  const {bar,pct} = cqClass(s.cq);
+  const tc = s.team==='Presales'?'#2563eb':'#c8a846';
+  return `<tr>
+    <td style="text-align:left;padding-left:16px;font-weight:600;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${getAVColor(s.name)};margin-right:8px;"></span>${s.name}</td>
+    <td><span class="pill" style="background:${tc}22;color:${tc};border:1px solid ${tc}44;">${s.team}</span></td>
+    <td>${s.agents}</td><td>${s.audits}</td>
+    <td>${s.ncf>0?`<span class="ncf-bad">${s.ncf}</span>`:'<span class="ncf-ok">0</span>'}</td>
+    <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill ${bar}" data-w="${s.cq}"></div></div><span class="pct ${pct}">${s.cq}%</span></div></td>
+  </tr>`;
+}).join('');
+
+// Quick links
+document.getElementById('quickLinks').innerHTML = [
+  {href:'presales.html',icon:'📋',title:'Presales Dashboard',sub:'48 agents · scores, errors, sub-teams',color:'var(--blue)'},
+  {href:'postsales.html',icon:'📞',title:'Postsales Dashboard',sub:'38 agents · scores, errors, sub-teams',color:'var(--gold)'},
+  {href:'queries.html',icon:'❓',title:'Customer Queries',sub:'Top queries: Presales vs Postsales',color:'var(--purple)'},
+  {href:'findings.html',icon:'🔍',title:'Findings & AOIs',sub:'Key observations & improvement areas',color:'var(--red)'},
+].map(l=>`<a href="${l.href}" style="text-decoration:none;">
+  <div class="ic" style="--ic-acc:${l.color};text-align:center;cursor:pointer;">
+    <div style="font-size:28px;margin-bottom:10px;">${l.icon}</div>
+    <div style="font-size:14px;font-weight:700;color:var(--txt);margin-bottom:6px;">${l.title}</div>
+    <div class="ic-sub">${l.sub}</div>
+  </div></a>`).join('');
+
+// Charts
+const isDark = ()=>document.documentElement.getAttribute('data-theme')==='dark';
+const tc = ()=>isDark()?'#b8b0cc':'#4a3f2f';
+const gc = ()=>isDark()?'rgba(255,255,255,.06)':'rgba(0,0,0,.06)';
+
+// Sub-team chart
+const stData = allSubteams;
+new Chart(document.getElementById('subteamChart'),{
+  type:'bar',
+  data:{labels:stData.map(s=>s.name),datasets:[{label:'CQ%',data:stData.map(s=>s.cq),
+    backgroundColor:stData.map(s=>s.team==='Presales'?'#2563ebCC':'#c8a846CC'),
+    borderColor:stData.map(s=>s.team==='Presales'?'#2563eb':'#c8a846'),
+    borderWidth:1.5,borderRadius:4,
+    datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:10},formatter:v=>v+'%'}
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{}},
+    scales:{x:{ticks:{color:tc,font:{size:9}},grid:{display:false}},y:{min:40,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},
+  plugins:[ChartDataLabels]
+});
+
+// NCF chart
+new Chart(document.getElementById('ncfChart'),{
+  type:'bar',
+  data:{labels:['Presales','Postsales'],
+    datasets:[
+      {label:'Audits',data:[PS_TOTALS.audits,POS_TOTALS.audits],backgroundColor:['#2563eb88','#c8a84688'],borderColor:['#2563eb','#c8a846'],borderWidth:2,borderRadius:6,yAxisID:'y',datalabels:{anchor:'end',align:'end',color:tc,font:{weight:'700',size:11},formatter:v=>`${v} audits`}},
+      {label:'NCF',data:[PS_TOTALS.ncf,POS_TOTALS.ncf],backgroundColor:['#dc262688','#dc262688'],borderColor:['#dc2626','#dc2626'],borderWidth:2,borderRadius:6,yAxisID:'y1',datalabels:{anchor:'end',align:'end',color:'#dc2626',font:{weight:'700',size:13},formatter:v=>`${v} NCF`}}
+    ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'top',labels:{color:tc,font:{size:11}}},datalabels:{}},
+    scales:{y:{ticks:{color:tc},grid:{color:gc}},y1:{position:'right',ticks:{color:'#dc2626'},grid:{display:false}}}},
+  plugins:[ChartDataLabels]
+});
+
+// All agents
+const sortedAll = [...PRESALES_AGENTS.map(a=>({...a,team:'Presales'})), ...POSTSALES_AGENTS.map(a=>({...a,team:'Postsales'}))].sort((a,b)=>b.cq-a.cq);
+new Chart(document.getElementById('allAgentsChart'),{
+  type:'bar',
+  data:{labels:sortedAll.map(a=>a.name.replace('_',' ')),
+    datasets:[{label:'CQ%',data:sortedAll.map(a=>a.cq),
+      backgroundColor:sortedAll.map(a=>a.team==='Presales'?'#2563ebCC':'#c8a846CC'),
+      borderColor:sortedAll.map(a=>a.team==='Presales'?'#2563eb':'#c8a846'),
+      borderWidth:1,borderRadius:3,datalabels:{display:false}
+    }]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:true,labels:{generateLabels:()=>[{text:'Presales',fillStyle:'#2563ebCC',strokeStyle:'#2563eb',lineWidth:1},{text:'Postsales',fillStyle:'#c8a846CC',strokeStyle:'#c8a846',lineWidth:1}],color:tc,font:{size:11}}},datalabels:{display:false},
+      tooltip:{callbacks:{label:ctx=>`${ctx.raw}% (${sortedAll[ctx.dataIndex].team})`}}},
+    scales:{x:{ticks:{color:tc,font:{size:8},maxRotation:45},grid:{display:false}},y:{min:40,max:100,ticks:{color:tc,callback:v=>v+'%'},grid:{color:gc}}}},
+  plugins:[ChartDataLabels]
+});
+</script>
+</body></html>
