@@ -113,7 +113,7 @@ document.getElementById('teamCompare').innerHTML = `
 
 // Top performers by audit count
 const psTop  = [...PRESALES_AGENTS].sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
-const posTop = [...POSTSALES_AGENTS].sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
+const posTop = [...POSTSALES_AGENTS].filter(a=>a.ncf===0).sort((a,b)=>b.audits-a.audits||b.cq-a.cq).slice(0,10);
 const AVC = ['#c8a846','#16a34a','#2563eb','#7c3aed','#ea580c','#dc2626','#0891b2','#be185d','#6d28d9','#0e7490'];
 function topTableHTML(agents, team, color) {
   const icon = team==='Presales'?'📋':'📞';
@@ -130,8 +130,8 @@ function topTableHTML(agents, team, color) {
   }).join('');
   return `<div class="tbl-wrap" style="margin-bottom:24px;">
     <div style="background:${color}18;border:1.5px solid ${color}44;border-radius:14px 14px 0 0;padding:14px 18px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${color};margin-bottom:4px;">${icon} ${team.toUpperCase()} — TOP PERFORMERS</div>
-      <div style="font-size:12px;color:var(--txt3);">Ranked by highest audit count · CQ score maintained · June 2026</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${color};margin-bottom:4px;">${icon} ${team.toUpperCase()} — TOP PERFORMERS${team==='Postsales'?' (ZERO NCF)':''}</div>
+      <div style="font-size:12px;color:var(--txt3);">${team==='Postsales' ? 'Ranked by highest audit count among agents with zero NCF · June 2026' : 'Ranked by highest audit count · CQ score maintained · June 2026'}</div>
     </div>
     <table class="tbl" style="border-radius:0 0 14px 14px;">
       <thead><tr><th style="width:36px;">#</th><th style="text-align:left;">Agent</th><th>Audits</th><th>NCF</th><th>CQ Score</th></tr></thead>
